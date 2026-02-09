@@ -1,130 +1,138 @@
-index.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>¿Quieres ser mi Valentine? 💖</title>
+  <title>Para ti, con amor 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
       display: flex;
       justify-content: center;
       align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
     }
 
     .card {
       background: white;
-      padding: 30px;
-      border-radius: 20px;
+      padding: 40px;
+      border-radius: 30px;
       text-align: center;
-      max-width: 420px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      position: relative;
+      max-width: 460px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+      animation: fadeIn 2s ease;
     }
 
     h1 {
-      color: #e63946;
-      margin-bottom: 10px;
+      color: #ff4d6d;
+      margin-bottom: 15px;
     }
 
     p {
       font-size: 18px;
-      margin: 10px 0;
+      margin: 14px 0;
+      color: #333;
+      line-height: 1.6;
     }
 
-    .pets {
-      font-size: 40px;
-      margin: 15px 0;
+    .poem {
+      font-style: italic;
     }
 
-    .buttons {
-      margin-top: 20px;
+    .final {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 25px;
+      color: #6c63ff;
     }
 
     button {
-      font-size: 18px;
-      padding: 10px 25px;
-      margin: 10px;
+      margin-top: 20px;
+      padding: 15px 35px;
       border: none;
-      border-radius: 10px;
+      border-radius: 30px;
+      font-size: 18px;
       cursor: pointer;
+      background: #ff4d6d;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .yes {
-      background-color: #4CAF50;
-      color: white;
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
-    .no {
-      background-color: #e63946;
-      color: white;
-      position: absolute;
+    .music-btn {
+      background: #6c63ff;
+      margin-top: 15px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
 
 <body>
-
   <div class="card">
-    <h1>¿Quieres ser mi Valentine? 💘</h1>
+    <h1>💖 Sabía que eras tú 💖</h1>
 
-    <div class="pets">🐶🐱🐶🐱</div>
-
-    <p>
-      No soy poeta, pero lo intento,<br>
-      contigo todo es más bonito y lento.
+    <p class="poem">
+      Desde que llegaste,<br>
+      el tiempo aprendió a ir más despacio,<br>
+      las risas encontraron su eco<br>
+      y los silencios dejaron de estar solos.
     </p>
 
-    <p>
-      Si los perritos y gatitos pudieran hablar,<br>
-      seguro dirían: <strong>dale que sí, no lo hagás esperar 🥹</strong>
+    <p class="poem">
+      Prometo abrazarte cuando el mundo pese,<br>
+      reír contigo hasta que duela el alma,<br>
+      compartir miradas que no necesiten palabras<br>
+      y crear recuerdos que siempre quieran volver.
     </p>
 
-    <div class="buttons">
-      <button class="yes" onclick="sayYes()">Sí 💖</button>
-      <button class="no" id="noBtn">No 😅</button>
-    </div>
+    <p class="poem">
+      Prometo aventuras sencillas,<br>
+      momentos imperfectos pero nuestros,<br>
+      amor del que no grita…<br>
+      pero se queda.
+    </p>
+
+    <p class="final">
+      Y ahora dime… 💫<br>
+      ¿Estás lista para acampar bajo las estrellas,<br>
+      escuchar el silencio del volcán,<br>
+      sentir el frío de la noche y el calor de mi abrazo,<br>
+      y escribir juntos una historia que no quiera terminar? 🌌🏕️🌋
+    </p>
+
+    <button onclick="alert('Entonces vamos a crear algo hermoso 💕')">
+      Sí, estoy lista 💖
+    </button>
+
+    <br>
+
+    <a 
+      href="https://music.apple.com/cr/album/heaven/566658836?i=566658941"
+      target="_blank"
+    >
+      <button class="music-btn">
+        🎧 Escuchar nuestra canción
+      </button>
+    </a>
   </div>
-
-  <script>
-    const noBtn = document.getElementById("noBtn");
-
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    });
-
-    function sayYes() {
-      document.body.innerHTML = `
-        <div style="
-          height:100vh;
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-          font-family:'Comic Sans MS', cursive;
-          text-align:center;
-          padding:20px;
-        ">
-          <div>
-            <h1>💖 SABÍA QUE DIRÍAS QUE SÍ 💖</h1>
-            <p style="font-size:22px;">
-              Prometo risas, abrazos,<br>
-              perritos, gatitos<br>
-              y muchos momentos bonitos 🐶🐱✨
-            </p>
-            <p style="font-size:26px;">Te quiero 💕</p>
-          </div>
-        </div>
-      `;
-    }
-  </script>
-
 </body>
 </html>
+
